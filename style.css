@@ -2,9 +2,9 @@
     width: 500px;
     height: 30px;
     font-size: 15px;
-    border: none;
-    color: #000000;
-    background-color: #FFFFFF;
+    border: solid;
+    color: white;
+    background-color: #ffffff00;
     text-align: left;
     font-family: Arial;
     font-weight: bold;
@@ -14,3 +14,8 @@
     box-sizing: border-box;
   }
   
+.main {
+    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+    color: white;
+    text-align: center;
+}
