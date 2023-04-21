@@ -1,3 +1,6 @@
+// source - https://www.html-code-generator.com/html/typewriter-text-scroller
+
+
 (() => {
     let CharacterPos = 0;
     let MsgBuffer = "";
