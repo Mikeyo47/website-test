@@ -1,0 +1,16 @@
+#typing-deleting-text {
+    width: 500px;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    color: #000000;
+    background-color: #FFFFFF;
+    text-align: left;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 5px;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
