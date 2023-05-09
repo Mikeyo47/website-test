@@ -16,8 +16,7 @@
       "HTML",
       "CSS",
       "JavaScript",
-      "More to follow...",
-      "Pane, vy jste teda ale setapouch, ze jo?"
+      "More to follow..."
     ];
 
     const StartTyping = () => {
