@@ -3,7 +3,7 @@
     height: 30px;
     font-size: 15px;
     border: solid;
-    color: white;
+    color: rgb(54, 54, 54);
     background-color: #ffffff00;
     text-align: left;
     font-family: Arial;
@@ -13,12 +13,6 @@
     outline: none;
     box-sizing: border-box;
   }
-  
-.main {
-    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
-    color: white;
-    text-align: center;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -52,4 +46,19 @@ button {
   font-weight: bold;
   cursor: pointer;
   padding: 5px 8px;
+}
+
+.main-nav {
+  
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  margin: 0 0 50px 50px;
 }
