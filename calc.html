@@ -17,16 +17,29 @@
                 </ul>
             </nav>
         </div>
-        <h1>Simple calculator</h1>
-        <input type="number" id="num1-el" />
-        <input type="number" id="num2-el" />
+        <div class="simple-calc">
+            <h1>Simple calculator</h1>
+            <input type="number" id="num1-el" />
+            <input type="number" id="num2-el" />
+            <br>
+            <button onclick="add()">Add</button>
+            <button onclick="subtract()">Subtract</button>
+            <button onclick="divide()">Divide</button>
+            <button onclick="multiply()">Multiply</button>
+            <br>
+            <span id="sum-el"></span>
+            <script src="functions.js"></script>
+        </div>
         <br>
-        <button onclick="add()">Add</button>
-        <button onclick="subtract()">Subtract</button>
-        <button onclick="divide()">Divide</button>
-        <button onclick="multiply()">Multiply</button>
-        <br>
-        <span id="sum-el"></span>
-        <script src="functions.js"></script>
+        <div class="Blackjack">
+            <h1>Blackjack</h1>
+            <p id="message-el">Want to play a round?</p>
+            <p id="cards-el">Cards:</p>
+            <p id="cards-sum-el">Sum:</p>
+            <button onclick="deal()">Deal</button>
+            <button onclick="hit()">Hit</button>
+            <button onclick="stay()">Stay</button>
+
+        </div>
     </body>
 </html>
