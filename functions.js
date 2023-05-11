@@ -32,6 +32,8 @@ let isAlive = true;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sum = 0;
+let sumEl = document.getElementById("sum-el");
+let cardsEl = document.getElementById("cards-el");
 
 function check () {
     if (isAlive === true && hasBlackJack === false) {
@@ -48,14 +50,14 @@ function deal() {
     let firstCard = generateCard();
     let secondCard = generateCard();
     sum = firstCard + secondCard;
-    document.getElementById("cards-el").textContent = `Cards: ${firstCard} ${secondCard}`;
-    document.getElementById("cards-sum-el").textContent = `Sum: ${sum}`;
+    cardsEl.textContent = `Cards: ${firstCard} ${secondCard}`;
+    sumEl.textContent = `Sum: ${sum}`;
     document.getElementById("deal-btn").disabled = true;
     document.getElementById("hit-btn").disabled = false;
     document.getElementById("stand-btn").disabled = false;
 
     if (sum < 21) {
-        document.getElementById("message-el").textContent = "Do you want to draw a new card?";
+        check();
     } else if (sum === 21) {
         hasBlackJack = true;
         document.getElementById("message-el").textContent = "You've got Blackjack!";
@@ -66,17 +68,18 @@ function deal() {
 }
 
 function hit() {
-    let newCard = Math.floor(Math.random() * 10) + 2;
+    let newCard = generateCard();
     sum += newCard;
-    document.getElementById("cards-sum-el").textContent = `Sum: ${sum}`;
+    sumEl.textContent = `Sum: ${sum}`;
+    cardsEl.textContent += ` ${newCard} `;
     if (sum < 21) {
-        document.getElementById("message-el").textContent = "Do you want to draw a new card?";
+        check();
     } else if (sum === 21) {
         hasBlackJack = true;
-        document.getElementById("message-el").textContent = "You've got Blackjack!";
+        check();
     } else {
         isAlive = false;
-        document.getElementById("message-el").textContent = "You're out of the game!";
+        check();
     }
 }
 
