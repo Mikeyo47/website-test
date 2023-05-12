@@ -32,38 +32,43 @@ let isAlive = true;
 let message = "";
 let messageEl = document.getElementById("message-el");
 let sum = 0;
-let sumEl = document.getElementById("sum-el");
+let sumEl = document.getElementById("cards-sum-el");
 let cardsEl = document.getElementById("cards-el");
 
 function check () {
     if (isAlive === true && hasBlackJack === false) {
-        messageEl.textContent = "Do you want to draw a new card?";
+        message = "Do you want to draw a new card?";
     } else if (isAlive === true && hasBlackJack === true) {
-        messageEl.textContent = "You've got Blackjack!";
+        message = "You've got Blackjack!";
+        document.getElementById("hit-btn").disabled = true;
+        document.getElementById("stay-btn").disabled = true;
     } else if (isAlive === false) {
-        messageEl.textContent = "You're out of the game!";
+        message = "You're out of the game! Click the Deal button to start a new round.";
+        document.getElementById("hit-btn").disabled = true;
+        document.getElementById("stay-btn").disabled = true;
     }
+    messageEl.textContent = message;
 }
 
 
 function deal() {
-    let firstCard = generateCard();
-    let secondCard = generateCard();
+    const firstCard = generateCard();
+    const secondCard = generateCard();
     sum = firstCard + secondCard;
     cardsEl.textContent = `Cards: ${firstCard} ${secondCard}`;
     sumEl.textContent = `Sum: ${sum}`;
     document.getElementById("deal-btn").disabled = true;
     document.getElementById("hit-btn").disabled = false;
-    document.getElementById("stand-btn").disabled = false;
+    document.getElementById("stay-btn").disabled = false;
 
     if (sum < 21) {
         check();
     } else if (sum === 21) {
         hasBlackJack = true;
-        document.getElementById("message-el").textContent = "You've got Blackjack!";
+        check();
     } else {
         isAlive = false;
-        document.getElementById("message-el").textContent = "You're out of the game!";
+        check();
     }
 }
 
@@ -83,19 +88,21 @@ function hit() {
     }
 }
 
-function stand() {
+function stay() {
     
 }
 
 function reset() {
-    let hasBlackJack = false;
-    let isAlive = true;
-    let message = "";
-    let sum = 0;
+    hasBlackJack = false;
+    isAlive = true;
+    message = "";
+    sum = 0;
     document.getElementById("deal-btn").disabled = false;
     document.getElementById("hit-btn").disabled = true;
-    document.getElementById("stand-btn").disabled = true;
-    document.getElementById("message-el").textContent = "Want to play a round?";
+    document.getElementById("stay-btn").disabled = true;
+    messageEl.textContent = "Want to play a round?";
+    cardsEl.textContent = "Cards:";
+    sumEl.textContent = "Sum:";
 }
 
 function generateCard () {
